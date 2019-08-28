@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Realtor-office-coursework", "Realtor-office-coursework\Realtor-office-coursework.csproj", "{ED302486-D72A-4F3C-A457-B0AC253320F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Realtor office coursework", "Realtor-office-coursework\Realtor office coursework.csproj", "{ED302486-D72A-4F3C-A457-B0AC253320F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{CC3CD920-0B17-4A10-BCFB-AABD20B754D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ED302486-D72A-4F3C-A457-B0AC253320F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED302486-D72A-4F3C-A457-B0AC253320F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED302486-D72A-4F3C-A457-B0AC253320F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC3CD920-0B17-4A10-BCFB-AABD20B754D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC3CD920-0B17-4A10-BCFB-AABD20B754D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC3CD920-0B17-4A10-BCFB-AABD20B754D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC3CD920-0B17-4A10-BCFB-AABD20B754D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
