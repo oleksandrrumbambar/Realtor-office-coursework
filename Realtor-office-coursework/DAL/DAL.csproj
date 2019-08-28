@@ -48,13 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\EFContext.cs" />
+    <Compile Include="Entities\Realtor.cs" />
+    <Compile Include="Entities\Shopper.cs" />
     <Compile Include="Entities\Apartment.cs" />
+    <Compile Include="Entities\ShopperApartment.cs" />
+    <Compile Include="Migrations\201908281715000_Realtor office.cs" />
+    <Compile Include="Migrations\201908281715000_Realtor office.Designer.cs">
+      <DependentUpon>201908281715000_Realtor office.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201908281715000_Realtor office.resx">
+      <DependentUpon>201908281715000_Realtor office.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    [Table("Accounts")]
-    public class Account
+    [Table("Realtors")]
+    public class Realtor
     {
 
         [Key]
@@ -21,8 +21,7 @@ namespace DAL.Entities
         [Required]
         public int Password { get; set; }
 
-        [Required]
-        public bool Admin { get; set; }
+        public virtual ICollection<Apartment> Apartments { set; get; }
 
     }
 }
