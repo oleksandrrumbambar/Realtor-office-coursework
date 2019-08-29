@@ -16,13 +16,7 @@ namespace DAL.Migrations
 
         protected override void Seed(DAL.Entities.EFContext context)
         {
-            context.Realtors.AddOrUpdate(t => t.Id, new Realtor()
-            {
-                Id = 1,
-                Name = "Vadim Zakharchuk",
-                Password = "F4F4"
-                        
-            });
+            
         }
     }
 }
