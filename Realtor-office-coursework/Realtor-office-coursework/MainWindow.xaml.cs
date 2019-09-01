@@ -24,5 +24,11 @@ namespace Realtor_office_coursework
         {
             InitializeComponent();
         }
+
+        private void ClickSignIn(object sender, RoutedEventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ComputerShop;Integrated Security=True");
+            
+        }
     }
 }
