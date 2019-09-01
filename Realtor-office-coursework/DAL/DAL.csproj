@@ -57,6 +57,14 @@
     <Compile Include="Migrations\201908281715000_Realtor office.Designer.cs">
       <DependentUpon>201908281715000_Realtor office.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909011310384_Edit.cs" />
+    <Compile Include="Migrations\201909011310384_Edit.Designer.cs">
+      <DependentUpon>201909011310384_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909011313115_Edit Shoppr.cs" />
+    <Compile Include="Migrations\201909011313115_Edit Shoppr.Designer.cs">
+      <DependentUpon>201909011313115_Edit Shoppr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +75,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201908281715000_Realtor office.resx">
       <DependentUpon>201908281715000_Realtor office.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909011310384_Edit.resx">
+      <DependentUpon>201909011310384_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909011313115_Edit Shoppr.resx">
+      <DependentUpon>201909011313115_Edit Shoppr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

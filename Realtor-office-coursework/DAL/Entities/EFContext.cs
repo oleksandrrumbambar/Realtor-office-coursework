@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    class EFContext : DbContext
+    public class EFContext : DbContext
     {
 
         public EFContext() : base("Connection")
         { }
 
+
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<Realtor> Realtors { get; set; }
         public DbSet<Shopper> Shoppers { get; set; }
-    }
+
+}
 }

@@ -19,7 +19,7 @@ namespace DAL.Entities
         public string Name { get; set; }
 
         [Required]
-        public int Password { get; set; }
+        public string Password { get; set; }
 
         public virtual ICollection<ShopperApartment> ShopperApartments { set; get; }
 

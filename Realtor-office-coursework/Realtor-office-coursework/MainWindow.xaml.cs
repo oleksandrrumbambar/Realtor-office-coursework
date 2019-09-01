@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,10 +26,36 @@ namespace Realtor_office_coursework
             InitializeComponent();
         }
 
+
         private void ClickSignIn(object sender, RoutedEventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ComputerShop;Integrated Security=True");
-            
+
+            EFContext Context = new EFContext();
+            //for (int i = 0; i < Context.Realtors.Count(); i++)
+            //{
+            //    Realtor realtor = Context.Realtors[i];
+            //    if (TextBoxUserName.Text == Context.Realtors.)
+            //}
+
+            foreach (var item in Context.Realtors.ToList())
+            {
+
+                if (item.Name == TextBoxUserName.Text &&
+                   item.Password == TextBoxPassword.Text)
+                {
+                    Window1 WindowProg = new Window1();
+                    WindowProg.Show();
+                    this.Close();
+                }
+                else
+                {
+
+                    string error = "Pomilka";
+                    MessageBox.Show(error);
+
+                }
+            }
+
         }
     }
 }

@@ -34,8 +34,8 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Realtor Office" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="User Name" ></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="1" Text="Password"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="User Name" Name="TextBoxUserName"></TextBox>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="Password" Name="TextBoxPassword"></TextBox>
         <Button Grid.Row="7" Grid.Column="1" Height="Auto" Content="Sign in" FontSize="24" Background="#FF9E9E9E" Click="ClickSignIn"  />
     </Grid>
 </Window>
