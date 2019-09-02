@@ -57,5 +57,17 @@ namespace Realtor_office_coursework
             }
 
         }
+
+
+
+        private void TextBoxUserName_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            TextBoxUserName.Clear();
+        }
+
+        private void TextBoxPassword_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            TextBoxPassword.Clear();
+        }
     }
 }
