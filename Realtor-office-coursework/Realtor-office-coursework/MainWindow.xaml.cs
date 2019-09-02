@@ -25,7 +25,7 @@ namespace Realtor_office_coursework
         {
             InitializeComponent();
         }
-
+        public int idRealtor;
 
         private void ClickSignIn(object sender, RoutedEventArgs e)
         {
@@ -43,9 +43,11 @@ namespace Realtor_office_coursework
                 if (item.Name == TextBoxUserName.Text &&
                    item.Password == TextBoxPassword.Text)
                 {
+                    idRealtor = item.Id;
                     Window1 WindowProg = new Window1();
+                    WindowProg.Owner = this;
                     WindowProg.Show();
-                    this.Close();
+                    //this.Close();
                 }
                 else
                 {
@@ -55,6 +57,7 @@ namespace Realtor_office_coursework
 
                 }
             }
+
 
         }
 
