@@ -60,18 +60,25 @@ namespace Realtor_office_coursework
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
-            context.Apartments.Remove(
-                new Apartment
+            //Apartment ap = new Apartment
+            //{
+            //    Id = indexIdDelete,
+            //    Number = NumberTextBox.Text,
+            //    Price = decimal.Parse(PriceTextBox.Text),
+            //    RealtorId = ((MainWindow)Owner).idRealtor,
+            //    Square = double.Parse(SquareTextBox.Text),
+            //    CountRooms = int.Parse(CountRoomsTextBox.Text),
+            //    Bought = false
+            //};
+            foreach (var p in context.Apartments)
+            {
+                if (p.Id == indexIdDelete)
                 {
-                    Id = indexIdDelete,
-                    Number = NumberTextBox.Text,
-                    Price = decimal.Parse(PriceTextBox.Text),
-                    RealtorId = ((MainWindow)Owner).idRealtor,
-                    Square = double.Parse(SquareTextBox.Text),
-                    CountRooms = int.Parse(CountRoomsTextBox.Text),
-                    Bought = false
-                });
+                    context.Apartments.Remove(p);
+                    break;
+                }
+            }
+            //context.Apartments.Remove(ap);
             context.SaveChanges();
             ShowList();
         }
