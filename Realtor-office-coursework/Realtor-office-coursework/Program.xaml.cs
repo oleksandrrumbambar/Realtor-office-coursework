@@ -1,6 +1,7 @@
 ﻿using DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,91 +25,127 @@ namespace Realtor_office_coursework
         int index = 0;
         int indexIdDeleteEdit;
         EFContext context = new EFContext();
+        ObservableCollection<ApartementDTO> apartments;
         public Window1()
         {
             InitializeComponent();
             connect();
-            ShowList(index);
+            //ShowList();
         }
         public void connect()
         {
-            var List = context.Apartments.Select(p => new
-            {
-                Number = p.Number,
-                Price = p.Price,
-                Square = p.Square,
-                CountRooms = p.CountRooms,
-                Bought = p.Bought
-            }).ToList();
-            DataGridApartment.ItemsSource = List;
+            apartments = new ObservableCollection<ApartementDTO>(
+                context.Apartments.Select(t=>
+                new ApartementDTO() {
+                    Id=t.Id,
+                    CountRooms=t.CountRooms,
+                    Number=t.Number,
+                    Price=t.Price,
+                    Square=t.Square
+                }).ToList());
+            //var List = context.Apartments.Select(p => new
+            //{
+            //    Number = p.Number,
+            //    Price = p.Price,
+            //    Square = p.Square,
+            //    CountRooms = p.CountRooms,
+            //    Bought = p.Bought
+            //}).ToList();
+
+            DataGridApartment.ItemsSource = apartments;
         }
-        public void ShowList(int ind)
+        public void ShowList()
         {
             List<Apartment> apartments = context.Apartments.ToList();
-            NumberTextBox.Text = apartments[ind].Number.ToString();
-            PriceTextBox.Text = apartments[ind].Price.ToString();
-            SquareTextBox.Text = apartments[ind].Square.ToString();
-            CountRoomsTextBox.Text = apartments[ind].CountRooms.ToString();
-            indexIdDeleteEdit = apartments[ind].Id;
-            
+            NumberTextBox.Text = apartments[index].Number.ToString();
+            PriceTextBox.Text = apartments[index].Price.ToString();
+            SquareTextBox.Text = apartments[index].Square.ToString();
+            CountRoomsTextBox.Text = apartments[index].CountRooms.ToString();
+            indexIdDeleteEdit = apartments[index].Id;
         }
 
         private void DataGridApartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
-            index = DataGridApartment.SelectedIndex;
-            ShowList(index);
+            //index = DataGridApartment.SelectedIndex;
+            //ShowList();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
+            Apartment apart = (Apartment)DataGridApartment.SelectedItem;
 
             foreach (var p in context.Apartments)
             {
                 
-                if (p.Id == indexIdDeleteEdit)
+                if (p.Id == apart.Id)
                 {
-                    index = 1;
                     context.Apartments.Remove(p);
+                    apartments.Remove(apartments.FirstOrDefault(t=>t.Id==apart.Id));
                     break;
                 }
                 
             }
 
             context.SaveChanges();
-            connect();
-            ShowList(index);
+           
+            
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-
-            context.Apartments.Add(new Apartment {
+            Apartment aprat = new Apartment
+            {
                 Number = NumberTextBox.Text,
                 Price = decimal.Parse(PriceTextBox.Text),
                 RealtorId = ((MainWindow)Owner).idRealtor,
-                Square=double.Parse(SquareTextBox.Text),
+                Square = double.Parse(SquareTextBox.Text),
                 CountRooms = int.Parse(CountRoomsTextBox.Text),
                 Bought = false,
-            });
+            };
+            context.Apartments.Add(aprat);
             context.SaveChanges();
-            connect();
-            ShowList(index);
 
+            apartments.Add(new ApartementDTO() {
+                Number = aprat.Number,
+                Price = aprat.Price,
+                Square = aprat.Square,
+                CountRooms = aprat.CountRooms,
+            });
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            int i = index;
-            Apartment ap = context.Apartments.FirstOrDefault(t => t.Id == indexIdDeleteEdit);
-            ap.Number = NumberTextBox.Text;
-            ap.Price = decimal.Parse(PriceTextBox.Text);
-            ap.RealtorId = ((MainWindow)Owner).idRealtor;
-            ap.Square = double.Parse(SquareTextBox.Text);
-            ap.CountRooms = int.Parse(CountRoomsTextBox.Text);
+            Apartment apart = (Apartment)DataGridApartment.SelectedItem;
+
+            Apartment ap = context.Apartments.FirstOrDefault(t => t.Id == apart.Id);
+
+           
+
+            foreach (var p in context.Apartments)
+            {
+
+                if (p.Id == apart.Id)
+                {
+                    var temp = apartments.First(t => t.Id == apart.Id);
+                    temp.Number = NumberTextBox.Text;
+
+                    ap.Number = NumberTextBox.Text;
+                    ap.Price = decimal.Parse(PriceTextBox.Text);
+                    ap.Square = double.Parse(SquareTextBox.Text);
+                    ap.CountRooms = int.Parse(CountRoomsTextBox.Text);
+
+                    
+                    break;
+                    
+                }
+            }
             context.SaveChanges();
-            connect();
-            ShowList(i);
+
+            
+
+            //connect();
+            //ShowList();
         }
     }
 }

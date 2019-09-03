@@ -26,7 +26,14 @@
             <ColumnDefinition Width="0.01*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="4" Grid.Row="1" Grid.RowSpan="6">
-            <DataGrid Name="DataGridApartment" CanUserAddRows="False" SelectionChanged="DataGridApartment_SelectionChanged"></DataGrid>
+            <DataGrid SelectedItem="{Binding Path=SelectedRule, Mode=TwoWay}" AutoGenerateColumns="False" Name="DataGridApartment" CanUserAddRows="False" SelectionChanged="DataGridApartment_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Number}" Header="Number"/>
+                    <DataGridTextColumn Binding="{Binding Price}" Header="Price"/>
+                    <DataGridTextColumn Binding="{Binding Square}" Header="Square"/>
+                    <DataGridTextColumn Binding="{Binding CountRooms}" Header="CountRooms"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
         <TextBlock Grid.Column="1" Grid.Row="1" Text="Number" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="2" Text="Price" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>
@@ -34,7 +41,7 @@
         <TextBlock Grid.Column="1" Grid.Row="4" Text="Count Rooms" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>
 
 
-        <TextBox Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" Name="NumberTextBox"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding Path=SelectedRule.Number}" VerticalAlignment="Center" Name="NumberTextBox"></TextBox>
         <TextBox Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Name="PriceTextBox"></TextBox>
         <TextBox Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Name="SquareTextBox"></TextBox>
         <TextBox Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" Name="CountRoomsTextBox"></TextBox>
