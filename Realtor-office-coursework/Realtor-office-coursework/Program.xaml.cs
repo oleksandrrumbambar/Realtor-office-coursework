@@ -22,13 +22,13 @@ namespace Realtor_office_coursework
     public partial class Window1 : Window
     {
         int index = 0;
-        int indexIdDelete;
+        int indexIdDeleteEdit;
         EFContext context = new EFContext();
         public Window1()
         {
             InitializeComponent();
             connect();
-            ShowList();
+            ShowList(index);
         }
         public void connect()
         {
@@ -42,45 +42,42 @@ namespace Realtor_office_coursework
             }).ToList();
             DataGridApartment.ItemsSource = List;
         }
-        public void ShowList()
+        public void ShowList(int ind)
         {
             List<Apartment> apartments = context.Apartments.ToList();
-            NumberTextBox.Text = apartments[index].Number.ToString();
-            PriceTextBox.Text = apartments[index].Price.ToString();
-            SquareTextBox.Text = apartments[index].Square.ToString();
-            CountRoomsTextBox.Text = apartments[index].CountRooms.ToString();
-            indexIdDelete = apartments[index].Id;
+            NumberTextBox.Text = apartments[ind].Number.ToString();
+            PriceTextBox.Text = apartments[ind].Price.ToString();
+            SquareTextBox.Text = apartments[ind].Square.ToString();
+            CountRoomsTextBox.Text = apartments[ind].CountRooms.ToString();
+            indexIdDeleteEdit = apartments[ind].Id;
+            
         }
 
         private void DataGridApartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
             index = DataGridApartment.SelectedIndex;
-            ShowList();
+            ShowList(index);
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            //Apartment ap = new Apartment
-            //{
-            //    Id = indexIdDelete,
-            //    Number = NumberTextBox.Text,
-            //    Price = decimal.Parse(PriceTextBox.Text),
-            //    RealtorId = ((MainWindow)Owner).idRealtor,
-            //    Square = double.Parse(SquareTextBox.Text),
-            //    CountRooms = int.Parse(CountRoomsTextBox.Text),
-            //    Bought = false
-            //};
+
             foreach (var p in context.Apartments)
             {
-                if (p.Id == indexIdDelete)
+                
+                if (p.Id == indexIdDeleteEdit)
                 {
+                    index = 1;
                     context.Apartments.Remove(p);
                     break;
                 }
+                
             }
-            //context.Apartments.Remove(ap);
+
             context.SaveChanges();
-            ShowList();
+            connect();
+            ShowList(index);
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -95,8 +92,23 @@ namespace Realtor_office_coursework
                 Bought = false,
             });
             context.SaveChanges();
-            ShowList();
+            connect();
+            ShowList(index);
 
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            int i = index;
+            Apartment ap = context.Apartments.FirstOrDefault(t => t.Id == indexIdDeleteEdit);
+            ap.Number = NumberTextBox.Text;
+            ap.Price = decimal.Parse(PriceTextBox.Text);
+            ap.RealtorId = ((MainWindow)Owner).idRealtor;
+            ap.Square = double.Parse(SquareTextBox.Text);
+            ap.CountRooms = int.Parse(CountRoomsTextBox.Text);
+            context.SaveChanges();
+            connect();
+            ShowList(i);
         }
     }
 }
