@@ -54,8 +54,7 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Button Height="Auto" Content="Buy" FontSize="24" Click="Buy_Click"></Button>
-            <Button Grid.Row="2" Height="Auto" Content="Apartament" FontSize="24" Click="Apartament_Click" ></Button>
-        </Grid>
+             </Grid>
 
     </Grid>
 </Window>

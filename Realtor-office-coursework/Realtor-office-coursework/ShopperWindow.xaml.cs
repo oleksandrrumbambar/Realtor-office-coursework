@@ -29,6 +29,8 @@ namespace Realtor_office_coursework
             connect(); 
         }
 
+        public List<ShopperApartment> ListSA = new List<ShopperApartment>();
+
         private void Buy_Click(object sender, RoutedEventArgs e)
         {
             ApartementDTO apart = (ApartementDTO)DataGridApartment.SelectedItem;
@@ -52,6 +54,7 @@ namespace Realtor_office_coursework
                         ApartmentId = ap.Id,
 
                     };
+                    ListSA.Add(aprat);
                     context.ShopperApartment.Add(aprat);
                     break;
 
@@ -62,10 +65,7 @@ namespace Realtor_office_coursework
 
         }
 
-        private void Apartament_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         public void connect()
         {

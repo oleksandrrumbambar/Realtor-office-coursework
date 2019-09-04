@@ -37,5 +37,6 @@
         <TextBox Grid.Row="3" Grid.Column="1" Text="User Name" Name="TextBoxUserName" MouseDoubleClick="TextBoxUserName_MouseDoubleClick"></TextBox>
         <TextBox Grid.Row="5" Grid.Column="1" Text="Password" Name="TextBoxPassword" MouseDoubleClick="TextBoxPassword_MouseDoubleClick"></TextBox>
         <Button Grid.Row="7" Grid.Column="1" Height="Auto" Content="Sign in" FontSize="24" Background="#FF9E9E9E" Click="ClickSignIn"  />
-    </Grid>
+        <Button Grid.Row="9" Grid.Column="1" Height="Auto" Content="Registration" FontSize="24" Background="#FF9E9E9E" Click="Registration_Click"  />
+     </Grid>
 </Window>

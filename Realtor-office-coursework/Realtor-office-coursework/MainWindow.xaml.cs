@@ -27,11 +27,11 @@ namespace Realtor_office_coursework
         }
         public int idRealtor;
         public Shopper Shopper;
+            EFContext Context = new EFContext();
 
         private void ClickSignIn(object sender, RoutedEventArgs e)
         {
 
-            EFContext Context = new EFContext();
             //for (int i = 0; i < Context.Realtors.Count(); i++)
             //{
             //    Realtor realtor = Context.Realtors[i];
@@ -77,6 +77,38 @@ namespace Realtor_office_coursework
         private void TextBoxPassword_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             TextBoxPassword.Clear();
+        }
+
+        private void Registration_Click(object sender, RoutedEventArgs e)
+        {
+            int i = 0;
+            foreach (var p in Context.Shoppers.ToList())
+            {
+                if (p.Name != TextBoxUserName.Text)
+                {
+                    i++;
+                }
+                
+            }
+
+            if (i == Context.Shoppers.Count())
+            {
+                Context.Shoppers.Add(
+             new Shopper
+             {
+                 Name = TextBoxUserName.Text,
+                 Password = TextBoxPassword.Text
+             });
+                MessageBox.Show("!!!!!!!!!!!!!!!!!!!!!HURRAY, YOU HAVE REGISTERED, HURRAY!!!!!!!!!!!!!!!!!!!!!");
+
+                Context.SaveChanges();
+            }
+            else if (i == Context.Shoppers.Count() - 1)
+            {
+                MessageBox.Show("This user already exists");
+                
+            }
+
         }
     }
 }
