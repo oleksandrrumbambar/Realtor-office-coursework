@@ -65,6 +65,14 @@
     <Compile Include="Migrations\201909011313115_Edit Shoppr.Designer.cs">
       <DependentUpon>201909011313115_Edit Shoppr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909041559465_Add shoper tbl.cs" />
+    <Compile Include="Migrations\201909041559465_Add shoper tbl.Designer.cs">
+      <DependentUpon>201909041559465_Add shoper tbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909041602561_Change shhope tbl.cs" />
+    <Compile Include="Migrations\201909041602561_Change shhope tbl.Designer.cs">
+      <DependentUpon>201909041602561_Change shhope tbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +89,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909011313115_Edit Shoppr.resx">
       <DependentUpon>201909011313115_Edit Shoppr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909041559465_Add shoper tbl.resx">
+      <DependentUpon>201909041559465_Add shoper tbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909041602561_Change shhope tbl.resx">
+      <DependentUpon>201909041602561_Change shhope tbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

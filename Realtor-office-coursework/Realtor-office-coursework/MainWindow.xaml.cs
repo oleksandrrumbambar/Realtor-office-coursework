@@ -26,6 +26,7 @@ namespace Realtor_office_coursework
             InitializeComponent();
         }
         public int idRealtor;
+        public Shopper Shopper;
 
         private void ClickSignIn(object sender, RoutedEventArgs e)
         {
@@ -49,15 +50,20 @@ namespace Realtor_office_coursework
                     WindowProg.Show();
                     //this.Close();
                 }
-                else
+            }
+            foreach (var item in Context.Shoppers.ToList())
+            {
+
+                if (item.Name == TextBoxUserName.Text &&
+                   item.Password == TextBoxPassword.Text)
                 {
-
-                    string error = "Pomilka";
-                    MessageBox.Show(error);
-
+                    Shopper = item;
+                    ShopperWindow WindowProg = new ShopperWindow();
+                    WindowProg.Owner = this;
+                    WindowProg.Show();
+                    //this.Close();
                 }
             }
-
 
         }
 

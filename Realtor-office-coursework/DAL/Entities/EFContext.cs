@@ -17,6 +17,7 @@ namespace DAL.Entities
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<Realtor> Realtors { get; set; }
         public DbSet<Shopper> Shoppers { get; set; }
+        public DbSet<ShopperApartment> ShopperApartment { get; set; }
 
-}
+    }
 }

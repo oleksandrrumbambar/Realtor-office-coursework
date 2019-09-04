@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Realtor_office_coursework
 {
-    public class ApartementDTO:INotifyPropertyChanged
+    public class ApartementDTO : INotifyPropertyChanged
     {
         public int Id { get; set; }
 

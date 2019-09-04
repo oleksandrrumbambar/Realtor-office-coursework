@@ -30,7 +30,6 @@ namespace Realtor_office_coursework
         {
             InitializeComponent();
             connect();
-            //ShowList();
         }
         public void connect()
         {
@@ -66,14 +65,14 @@ namespace Realtor_office_coursework
 
         private void DataGridApartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
             //index = DataGridApartment.SelectedIndex;
             //ShowList();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            Apartment apart = (Apartment)DataGridApartment.SelectedItem;
+            ApartementDTO apart = (ApartementDTO)DataGridApartment.SelectedItem;
 
             foreach (var p in context.Apartments)
             {
@@ -88,8 +87,8 @@ namespace Realtor_office_coursework
             }
 
             context.SaveChanges();
-           
-            
+
+
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -116,11 +115,11 @@ namespace Realtor_office_coursework
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            Apartment apart = (Apartment)DataGridApartment.SelectedItem;
+            ApartementDTO apart = (ApartementDTO)DataGridApartment.SelectedItem;
 
             Apartment ap = context.Apartments.FirstOrDefault(t => t.Id == apart.Id);
 
-           
+
 
             foreach (var p in context.Apartments)
             {
@@ -129,23 +128,17 @@ namespace Realtor_office_coursework
                 {
                     var temp = apartments.First(t => t.Id == apart.Id);
                     temp.Number = NumberTextBox.Text;
-
                     ap.Number = NumberTextBox.Text;
                     ap.Price = decimal.Parse(PriceTextBox.Text);
                     ap.Square = double.Parse(SquareTextBox.Text);
                     ap.CountRooms = int.Parse(CountRoomsTextBox.Text);
 
-                    
+
                     break;
-                    
+
                 }
             }
             context.SaveChanges();
-
-            
-
-            //connect();
-            //ShowList();
         }
     }
 }

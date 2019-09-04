@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    [Table("Accounts")]
+    [Table("Shopper")]
     public class Shopper
     {
 
