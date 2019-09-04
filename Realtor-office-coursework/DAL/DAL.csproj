@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201909041602561_Change shhope tbl.Designer.cs">
       <DependentUpon>201909041602561_Change shhope tbl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909041730388_Update EFContext.cs" />
+    <Compile Include="Migrations\201909041730388_Update EFContext.Designer.cs">
+      <DependentUpon>201909041730388_Update EFContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909041602561_Change shhope tbl.resx">
       <DependentUpon>201909041602561_Change shhope tbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909041730388_Update EFContext.resx">
+      <DependentUpon>201909041730388_Update EFContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -46,19 +46,19 @@ namespace Realtor_office_coursework
 
                     ap.Bought = true;
 
-
                     ShopperApartment aprat = new ShopperApartment
                     {
                         ShopperId = ((MainWindow)Owner).Shopper.Id,
-                        ShopperOf = ((MainWindow)Owner).Shopper,
                         ApartmentId = ap.Id,
-                        ApartmentOf = ap
+
                     };
+                    context.ShopperApartment.Add(aprat);
                     break;
 
                 }
             }
             context.SaveChanges();
+            
 
         }
 
