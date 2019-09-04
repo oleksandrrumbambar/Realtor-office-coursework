@@ -26,7 +26,7 @@ namespace Realtor_office_coursework
         public ShopperWindow()
         {
             InitializeComponent();
-            connect();
+            connect(); 
         }
 
         private void Buy_Click(object sender, RoutedEventArgs e)
