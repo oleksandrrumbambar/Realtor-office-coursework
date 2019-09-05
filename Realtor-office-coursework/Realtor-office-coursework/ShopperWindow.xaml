@@ -25,6 +25,9 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="0.01*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+            <Label Background="Gray" Grid.ColumnSpan="5"></Label>
+            <TextBlock Text="Shopper" Grid.Column="1" Foreground="White" FontSize="14"></TextBlock>
+            <Label Background="Gray" Grid.ColumnSpan="5" Grid.Row="7"></Label>
         <Grid Grid.Column="4" Grid.Row="1" Grid.RowSpan="6">
             <DataGrid IsReadOnly="True" AutoGenerateColumns="False" Name="DataGridApartment" CanUserAddRows="False" >
                 <DataGrid.Columns>

@@ -22,8 +22,11 @@
             <ColumnDefinition Width="0.3*"></ColumnDefinition>
             <ColumnDefinition Width="0.3*"></ColumnDefinition>
             <ColumnDefinition Width="0.01*"></ColumnDefinition>
-
+        
         </Grid.ColumnDefinitions>
+        <Label Grid.ColumnSpan="5" Background="Gray"></Label>
+        <TextBlock Text="Add Apartment" Foreground="White" Grid.Column="1" FontSize="14"></TextBlock>
+        <Label Grid.Row="7" Grid.ColumnSpan="5" Background="Gray"></Label>
         <TextBlock Grid.Column="1" Grid.Row="1" Text="Number" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="2" Text="Price" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="3" Text="Square" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>

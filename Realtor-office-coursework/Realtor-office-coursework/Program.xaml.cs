@@ -20,8 +20,7 @@ namespace Realtor_office_coursework
     
     public partial class Window1 : Window
     {
-        int index = 0;
-        int indexIdDeleteEdit;
+
         EFContext context = new EFContext();
         ObservableCollection<ApartementDTO> apartments;
         int IdRealtorCopy;

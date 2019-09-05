@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Realtor_office_coursework"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="450"
+        Title="MainWindow" Height="500" Width="450"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
@@ -27,12 +27,15 @@
             <RowDefinition Height="0.25*"></RowDefinition>
             <RowDefinition Height="0.5*"></RowDefinition>
             <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition Height="0.25*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Label Background="Gray" Grid.RowSpan="2" Grid.ColumnSpan="3"></Label>
+        <Label Background="Gray" Grid.Row="11"  Grid.RowSpan="2" Grid.ColumnSpan="3"></Label>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Realtor Office" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
         <TextBox Grid.Row="3" Grid.Column="1" Text="User Name" Name="TextBoxUserName" MouseDoubleClick="TextBoxUserName_MouseDoubleClick"></TextBox>
         <TextBox Grid.Row="5" Grid.Column="1" Text="Password" Name="TextBoxPassword" MouseDoubleClick="TextBoxPassword_MouseDoubleClick"></TextBox>
