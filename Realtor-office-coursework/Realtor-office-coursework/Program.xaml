@@ -26,7 +26,7 @@
             <ColumnDefinition Width="0.01*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="4" Grid.Row="1" Grid.RowSpan="6">
-            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" Name="DataGridApartment" CanUserAddRows="False" SelectionChanged="DataGridApartment_SelectionChanged">
+            <DataGrid IsReadOnly="True" AutoGenerateColumns="False" Name="DataGridApartment" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Number}" Header="Number"/>
                     <DataGridTextColumn Binding="{Binding Price}" Header="Price"/>
