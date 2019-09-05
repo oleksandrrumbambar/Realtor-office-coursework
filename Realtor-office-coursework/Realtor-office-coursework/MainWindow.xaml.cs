@@ -42,7 +42,7 @@ namespace Realtor_office_coursework
                     Window1 WindowProg = new Window1(item.Id);
                     WindowProg.Show();
                     MessageBox.Show($"Welcom {item.Name}");
-                    RealtorCheck = 2;
+                    RealtorCheck = 3;
                     break;
                 }
                 if (item.Name == TextBoxUserName.Text &&
@@ -70,6 +70,7 @@ namespace Realtor_office_coursework
                         ShopperWindow WindowProg = new ShopperWindow(item);
                         WindowProg.Show();
                         MessageBox.Show($"Welcom {item.Name}");
+                        ShopperCheck = 3;
                         break;
                     }
                     if (item.Name == TextBoxUserName.Text &&
