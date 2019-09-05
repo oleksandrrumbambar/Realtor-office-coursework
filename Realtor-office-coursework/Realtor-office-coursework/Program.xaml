@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Realtor_office_coursework"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="650" Width="800">
     <Grid DataContext="{Binding Path=SelectedItem,ElementName=DataGridApartment}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.25*"></RowDefinition>
@@ -52,10 +52,13 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="5"></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition Height="5"></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-        <Button Height="Auto" Content="Add" FontSize="24" Click="Add_Click"></Button>
-        <Button Grid.Row="2" Height="Auto" Content="Delete" FontSize="24" Click="Delete_Click" ></Button>
+            <Button Height="Auto" Content="Add" FontSize="24" Click="Add_Click"></Button>
+            <Button Grid.Row="2" Height="Auto" Content="Delete" FontSize="24" Click="Delete_Click" ></Button>
             <Button Grid.Row="4" Height="Auto" Content="Edit" FontSize="24" Click="Edit_Click" ></Button>
+            <Button Grid.Row="6" Height="Auto" Content="Statistics" FontSize="24" Click="Statistics_Click" ></Button>
         </Grid>
 
     </Grid>

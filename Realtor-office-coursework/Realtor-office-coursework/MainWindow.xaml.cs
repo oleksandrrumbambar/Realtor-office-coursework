@@ -81,17 +81,26 @@ namespace Realtor_office_coursework
 
         private void Registration_Click(object sender, RoutedEventArgs e)
         {
-            int i = 0;
+            int CountShopper = 0;
+            int CountRealtor = 0;
             foreach (var p in Context.Shoppers.ToList())
             {
                 if (p.Name != TextBoxUserName.Text)
                 {
-                    i++;
+                    CountShopper++;
                 }
                 
             }
+            foreach (var p in Context.Realtors.ToList())
+            {
+                if (p.Name != TextBoxUserName.Text)
+                {
+                    CountRealtor++;
+                }
 
-            if (i == Context.Shoppers.Count())
+            }
+
+            if (CountShopper == Context.Shoppers.Count() && CountRealtor == Context.Realtors.Count())
             {
                 Context.Shoppers.Add(
              new Shopper
@@ -103,7 +112,7 @@ namespace Realtor_office_coursework
 
                 Context.SaveChanges();
             }
-            else if (i == Context.Shoppers.Count() - 1)
+            else if (CountShopper == Context.Shoppers.Count() - 1 && CountRealtor == Context.Realtors.Count() - 1)
             {
                 MessageBox.Show("This user already exists");
                 

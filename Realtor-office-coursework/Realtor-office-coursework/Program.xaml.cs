@@ -140,5 +140,14 @@ namespace Realtor_office_coursework
             }
             context.SaveChanges();
         }
+
+        private void Statistics_Click(object sender, RoutedEventArgs e)
+        {
+
+            StatisticsWindow WindowProg = new StatisticsWindow();
+            WindowProg.Owner = this;
+            WindowProg.Show();
+
+        }
     }
 }
