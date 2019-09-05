@@ -57,11 +57,12 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="5"></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition Height="5"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Height="Auto" Content="Add" FontSize="24" Click="Add_Click"></Button>
-            <Button Grid.Row="2" Height="Auto" Content="Delete" FontSize="24" Click="Delete_Click" ></Button>
-            <Button Grid.Row="4" Height="Auto" Content="Edit" FontSize="24" Click="Edit_Click" ></Button>
-            <Button Grid.Row="6" Height="Auto" Content="Statistics" FontSize="24" Click="Statistics_Click" ></Button>
+            <Button Foreground="White" Height="Auto" Content="Add" FontSize="24" Click="Add_Click"></Button>
+            <Button Foreground="White" Grid.Row="2" Height="Auto" Content="Delete" FontSize="24" Click="Delete_Click" ></Button>
+            <Button Foreground="White" Grid.Row="4" Height="Auto" Content="Edit" FontSize="24" Click="Edit_Click" ></Button>
+            <Button Foreground="White" Grid.Row="6" Height="Auto" Content="Statistics" FontSize="24" Click="Statistics_Click" ></Button>
         </Grid>
 
     </Grid>

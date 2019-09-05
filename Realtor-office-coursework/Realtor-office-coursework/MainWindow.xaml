@@ -36,10 +36,10 @@
         </Grid.ColumnDefinitions>
         <Label Background="Gray" Grid.RowSpan="2" Grid.ColumnSpan="3"></Label>
         <Label Background="Gray" Grid.Row="11"  Grid.RowSpan="2" Grid.ColumnSpan="3"></Label>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Realtor Office" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
+        <TextBlock Foreground="White" Grid.Row="1" Grid.Column="1" Text="Realtor Office" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
         <TextBox Grid.Row="3" Grid.Column="1" Text="User Name" Name="TextBoxUserName" MouseDoubleClick="TextBoxUserName_MouseDoubleClick"></TextBox>
         <TextBox Grid.Row="5" Grid.Column="1" Text="Password" Name="TextBoxPassword" MouseDoubleClick="TextBoxPassword_MouseDoubleClick"></TextBox>
-        <Button Grid.Row="7" Grid.Column="1" Height="Auto" Content="Sign in" FontSize="24" Background="#FF9E9E9E" Click="ClickSignIn"  />
-        <Button Grid.Row="9" Grid.Column="1" Height="Auto" Content="Registration" FontSize="24" Background="#FF9E9E9E" Click="Registration_Click"  />
+        <Button Foreground="White" Grid.Row="7" Grid.Column="1" Height="Auto" Content="Sign in" FontSize="24" Background="Gray" Click="ClickSignIn"  />
+        <Button Foreground="White" Grid.Row="9" Grid.Column="1" Height="Auto" Content="Registration" FontSize="24" Background="Gray" Click="Registration_Click"  />
      </Grid>
 </Window>

@@ -40,7 +40,7 @@ namespace Realtor_office_coursework
                 {
                     Window1 WindowProg = new Window1(item.Id);
                     WindowProg.Show();
-
+                    MessageBox.Show($"Welcom {item.Name}");
                 }
             }
             foreach (var item in Context.Shoppers.ToList())
@@ -52,6 +52,7 @@ namespace Realtor_office_coursework
                     
                     ShopperWindow WindowProg = new ShopperWindow(item);
                     WindowProg.Show();
+                    MessageBox.Show($"Welcom {item.Name}");
 
                 }
             }
