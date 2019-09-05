@@ -31,7 +31,8 @@ namespace Realtor_office_coursework
         private void ClickSignIn(object sender, RoutedEventArgs e)
         {
 
-
+            int RealtorCheck = 0;
+            int ShopperCheck = 0;
             foreach (var item in Context.Realtors.ToList())
             {
 
@@ -41,22 +42,56 @@ namespace Realtor_office_coursework
                     Window1 WindowProg = new Window1(item.Id);
                     WindowProg.Show();
                     MessageBox.Show($"Welcom {item.Name}");
+                    RealtorCheck = 2;
+                    break;
+                }
+                if (item.Name == TextBoxUserName.Text &&
+                   item.Password != TextBoxPassword.Text)
+                {
+                    RealtorCheck = 2;
+                    break;
                 }
             }
-            foreach (var item in Context.Shoppers.ToList())
+            if (RealtorCheck == 2)
             {
 
-                if (item.Name == TextBoxUserName.Text &&
-                   item.Password == TextBoxPassword.Text)
+                MessageBox.Show($"Invalid password");
+                RealtorCheck = 3;
+            }
+            if (RealtorCheck != 3)
+            {
+                foreach (var item in Context.Shoppers.ToList())
                 {
-                    
-                    ShopperWindow WindowProg = new ShopperWindow(item);
-                    WindowProg.Show();
-                    MessageBox.Show($"Welcom {item.Name}");
+
+                    if (item.Name == TextBoxUserName.Text &&
+                       item.Password == TextBoxPassword.Text)
+                    {
+
+                        ShopperWindow WindowProg = new ShopperWindow(item);
+                        WindowProg.Show();
+                        MessageBox.Show($"Welcom {item.Name}");
+                        break;
+                    }
+                    if (item.Name == TextBoxUserName.Text &&
+                       item.Password != TextBoxPassword.Text)
+                    {
+                        ShopperCheck = 2;
+                        break;
+                    }
+                }
+                if (ShopperCheck == 2)
+                {
+
+                    MessageBox.Show($"Invalid password");
+
+                }
+                if (ShopperCheck == 0)
+                {
+
+                    MessageBox.Show($"{TextBoxUserName.Text} there is no such user");
 
                 }
             }
-
         }
 
 
