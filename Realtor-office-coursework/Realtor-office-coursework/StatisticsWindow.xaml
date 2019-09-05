@@ -39,14 +39,14 @@
         <TextBlock Grid.Column="1" Grid.Row="1" Text="Total Price" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="2" Text="All sold" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="3" Text="Total area" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="4" Text="1-2 rooms" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="0-2 rooms" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="5" Text="3-4 rooms" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="6" Text="5 or more rooms" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
 
         <TextBlock Grid.Column="2" Grid.Row="1" Text="0" Name="TotalPriceTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="2" Text="0" Name="AllSoldTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="3" Text="0" Name="TotalAreaTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
-        <TextBlock Grid.Column="2" Grid.Row="4" Text="0" Name="Rooms12TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="4" Text="0" Name="Rooms02TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="5" Text="0" Name="Rooms34TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="6" Text="0" Name="Rooms5TextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></TextBlock>
 

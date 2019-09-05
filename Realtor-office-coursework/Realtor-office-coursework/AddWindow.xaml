@@ -1,0 +1,41 @@
+﻿<Window x:Class="Realtor_office_coursework.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Realtor_office_coursework"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="450" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.25*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.01*"></ColumnDefinition>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+            <ColumnDefinition Width="0.01*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Number" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Price" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Square" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="Count Rooms" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22"></TextBlock>
+
+
+        <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding Path=Number}" VerticalAlignment="Center" Name="NumberTextBox"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=Price}" VerticalAlignment="Center" Name="PriceTextBox"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=Square}" VerticalAlignment="Center" Name="SquareTextBox"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=CountRooms}" VerticalAlignment="Center" Name="CountRoomsTextBox"></TextBox>
+
+        <Button Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="10" Content="Add" FontSize="24" Height="Auto" Click="Add_Click" ></Button>
+
+    </Grid>
+</Window>

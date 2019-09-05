@@ -16,15 +16,15 @@ using System.Windows.Shapes;
 
 namespace Realtor_office_coursework
 {
-    /// <summary>
-    /// Interaction logic for Shopper.xaml
-    /// </summary>
+
     public partial class ShopperWindow : Window
     {
         EFContext context = new EFContext();
+        Shopper ShopperCopy;
         ObservableCollection<ApartementDTO> apartments;
-        public ShopperWindow()
+        public ShopperWindow(Shopper Shopper)
         {
+            ShopperCopy = Shopper;
             InitializeComponent();
             connect(); 
         }
@@ -50,7 +50,7 @@ namespace Realtor_office_coursework
 
                     ShopperApartment aprat = new ShopperApartment
                     {
-                        ShopperId = ((MainWindow)Owner).Shopper.Id,
+                        ShopperId = ShopperCopy.Id,
                         ApartmentId = ap.Id,
 
                     };
@@ -61,7 +61,9 @@ namespace Realtor_office_coursework
                 }
             }
             context.SaveChanges();
-            
+            ShopperWindow WindowProg = new ShopperWindow(ShopperCopy);
+            WindowProg.Show();
+            this.Close();
 
         }
 

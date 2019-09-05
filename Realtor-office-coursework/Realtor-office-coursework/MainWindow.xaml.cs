@@ -25,18 +25,12 @@ namespace Realtor_office_coursework
         {
             InitializeComponent();
         }
-        public int idRealtor;
-        public Shopper Shopper;
+
             EFContext Context = new EFContext();
 
         private void ClickSignIn(object sender, RoutedEventArgs e)
         {
 
-            //for (int i = 0; i < Context.Realtors.Count(); i++)
-            //{
-            //    Realtor realtor = Context.Realtors[i];
-            //    if (TextBoxUserName.Text == Context.Realtors.)
-            //}
 
             foreach (var item in Context.Realtors.ToList())
             {
@@ -44,11 +38,9 @@ namespace Realtor_office_coursework
                 if (item.Name == TextBoxUserName.Text &&
                    item.Password == TextBoxPassword.Text)
                 {
-                    idRealtor = item.Id;
-                    Window1 WindowProg = new Window1();
-                    WindowProg.Owner = this;
+                    Window1 WindowProg = new Window1(item.Id);
                     WindowProg.Show();
-                    //this.Close();
+
                 }
             }
             foreach (var item in Context.Shoppers.ToList())
@@ -57,11 +49,10 @@ namespace Realtor_office_coursework
                 if (item.Name == TextBoxUserName.Text &&
                    item.Password == TextBoxPassword.Text)
                 {
-                    Shopper = item;
-                    ShopperWindow WindowProg = new ShopperWindow();
-                    WindowProg.Owner = this;
+                    
+                    ShopperWindow WindowProg = new ShopperWindow(item);
                     WindowProg.Show();
-                    //this.Close();
+
                 }
             }
 

@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace Realtor_office_coursework
 {
-    /// <summary>
-    /// Логика взаимодействия для StatisticsWindow.xaml
-    /// </summary>
+
     public partial class StatisticsWindow : Window
     {
         public StatisticsWindow()
@@ -52,7 +50,7 @@ namespace Realtor_office_coursework
             decimal TotalPrice =0;
             double TotalArea = 0;
             int Count = 0;
-            int CountRoom12 = 0;
+            int CountRoom02 = 0;
             int CountRoom34 = 0;
             int CountRoom5 = 0;
             foreach (var item in apartments)
@@ -61,8 +59,8 @@ namespace Realtor_office_coursework
                 TotalPrice += item.Price;
                 TotalArea += item.Square;
                 Count++;
-                if (item.CountRooms == 1 || item.CountRooms == 2)
-                    CountRoom12++;
+                if (item.CountRooms >= 0 || item.CountRooms == 2)
+                    CountRoom02++;
                 if (item.CountRooms == 3 || item.CountRooms == 4)
                     CountRoom34++;
                 if (item.CountRooms > 4)
@@ -73,7 +71,7 @@ namespace Realtor_office_coursework
             TotalPriceTextBlock.Text = TotalPrice.ToString();
             AllSoldTextBlock.Text = Count.ToString();
             TotalAreaTextBlock.Text = TotalArea.ToString();
-            Rooms12TextBlock.Text = CountRoom12.ToString();
+            Rooms02TextBlock.Text = CountRoom02.ToString();
             Rooms34TextBlock.Text = CountRoom34.ToString();
             Rooms5TextBlock.Text = CountRoom5.ToString();
 

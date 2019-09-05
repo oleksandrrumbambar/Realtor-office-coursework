@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace Realtor_office_coursework
 {
-    /// <summary>
-    /// Interaction logic for Window1.xaml
-    /// </summary>
+
     
     public partial class Window1 : Window
     {
@@ -26,15 +24,18 @@ namespace Realtor_office_coursework
         int indexIdDeleteEdit;
         EFContext context = new EFContext();
         ObservableCollection<ApartementDTO> apartments;
-        public Window1()
+        int IdRealtorCopy;
+
+        public Window1(int id)
         {
             InitializeComponent();
             connect();
+            IdRealtorCopy = id;
         }
         public void connect()
         {
             apartments = new ObservableCollection<ApartementDTO>(
-                context.Apartments.Select(t=>
+                context.Apartments.Where(t=>t.Bought==false).Select(t=>
                 new ApartementDTO() {
                     Id=t.Id,
                     CountRooms=t.CountRooms,
@@ -42,32 +43,9 @@ namespace Realtor_office_coursework
                     Price=t.Price,
                     Square=t.Square
                 }).ToList());
-            //var List = context.Apartments.Select(p => new
-            //{
-            //    Number = p.Number,
-            //    Price = p.Price,
-            //    Square = p.Square,
-            //    CountRooms = p.CountRooms,
-            //    Bought = p.Bought
-            //}).ToList();
+
 
             DataGridApartment.ItemsSource = apartments;
-        }
-        public void ShowList()
-        {
-            List<Apartment> apartments = context.Apartments.ToList();
-            NumberTextBox.Text = apartments[index].Number.ToString();
-            PriceTextBox.Text = apartments[index].Price.ToString();
-            SquareTextBox.Text = apartments[index].Square.ToString();
-            CountRoomsTextBox.Text = apartments[index].CountRooms.ToString();
-            indexIdDeleteEdit = apartments[index].Id;
-        }
-
-        private void DataGridApartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            //index = DataGridApartment.SelectedIndex;
-            //ShowList();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -90,27 +68,13 @@ namespace Realtor_office_coursework
 
 
         }
-
+        
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            Apartment aprat = new Apartment
-            {
-                Number = NumberTextBox.Text,
-                Price = decimal.Parse(PriceTextBox.Text),
-                RealtorId = ((MainWindow)Owner).idRealtor,
-                Square = double.Parse(SquareTextBox.Text),
-                CountRooms = int.Parse(CountRoomsTextBox.Text),
-                Bought = false,
-            };
-            context.Apartments.Add(aprat);
-            context.SaveChanges();
 
-            apartments.Add(new ApartementDTO() {
-                Number = aprat.Number,
-                Price = aprat.Price,
-                Square = aprat.Square,
-                CountRooms = aprat.CountRooms,
-            });
+            AddWindow menuWindow = new AddWindow(IdRealtorCopy);
+            this.Close();
+            menuWindow.Show();
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
